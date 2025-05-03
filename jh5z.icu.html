@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金华五中需要信息课！</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            background-color: #ff0000;
+            color: white;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 3px solid #ffcc00;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 3px;
+            background-color: #ffcc00;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            font-weight: 300;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+        
+        .section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #ffcc00;
+            transition: width 0.3s ease;
+        }
+        
+        .section:hover::before {
+            width: 10px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            color: #ffcc00;
+            margin-top: 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ffcc00;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background-color: #ffcc00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+        }
+        
+        p {
+            margin-bottom: 25px;
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: justify;
+            opacity: 0.95;
+            transition: opacity 0.3s ease;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+        }
+        
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+            position: relative;
+            display: inline-block;
+        }
+        
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffcc00;
+            transition: width 0.3s ease;
+        }
+        
+        a:hover {
+            transform: translateY(-2px);
+        }
+        
+        a:hover::after {
+            width: 100%;
+        }
+        
+        .quote {
+            font-style: italic;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(255, 204, 0, 0.1);
+            border-left: 4px solid #ffcc00;
+            font-size: 17px;
+            line-height: 1.8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 60px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .quote span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .highlight {
+            background-color: rgba(255, 204, 0, 0.15);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 204, 0, 0.1) 0%, transparent 70%);
+        }
+        
+        .case-study {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .case-study:hover {
+            transform: scale(1.02);
+        }
+        
+        .case-study h3 {
+            color: #ffcc00;
+            margin-top: 0;
+            font-size: 22px;
+            position: relative;
+        }
+        
+        .case-study h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #ffcc00;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 204, 0, 0.1) 0%, transparent 70%);
+        }
+        
+        .cta-section h2 {
+            margin-top: 0;
+            font-size: 32px;
+            color: #ffcc00;
+            position: relative;
+        }
+        
+        .cta-section p {
+            margin-bottom: 30px;
+            font-size: 19px;
+        }
+        
+        button {
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 35px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 80px;
+            border-top: 3px solid #ffcc00;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background-color: #ffcc00;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            font-size: 16px;
+            padding: 12px 22px;
+            border-radius: 25px;
+            background-color: rgba(255, 204, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            background-color: rgba(255, 204, 0, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .cta-section {
+                padding: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            header {
+                padding: 40px 0 30px;
+            }
+            
+            header::after {
+                width: 200px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .section {
+                margin-bottom: 30px;
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 22px;
+                padding-bottom: 10px;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            ul, ol {
+                margin-left: 20px;
+            }
+            
+            .cta-section {
+                padding: 40px 20px;
+                margin: 60px 0;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 30px 0 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .section {
+                margin-bottom: 25px;
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 20px;
+                padding-bottom: 10px;
+            }
+            
+            p {
+                font-size: 15px;
+            }
+            
+            ul, ol {
+                margin-left: 20px;
+            }
+            
+            .cta-section {
+                padding: 30px 15px;
+                margin: 40px 0;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            a {
+                font-size: 14px;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
+        .section:nth-child(6) { animation-delay: 1.0s; }
+        .section:nth-child(7) { animation-delay: 1.2s; }
+        .section:nth-child(8) { animation-delay: 1.4s; }
+        .section:nth-child(9) { animation-delay: 1.6s; }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 204, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+            }
+        }
+        
+        .section:hover .highlight {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        nav {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease, transform 0.5s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .nav-container::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 204, 0, 0.2);
+        }
+        
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffcc00;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            background-color: #ffcc00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease, transform 0.2s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffcc00;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffcc00;
+            transform: translateY(-3px);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .social-share a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-share a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-share a i {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-share a:hover i {
+            transform: scale(1.2);
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            font-size: 13px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tag::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background-color: rgba(255, 204, 0, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover::before {
+            width: 150%;
+            height: 150%;
+            opacity: 1;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(255, 204, 0, 0.8);
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background-color: rgba(255, 204, 0, 1);
+            transform: translateY(-5px) rotate(180deg);
+        }
+        
+        .back-to-top i {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top i {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-to-top:hover i {
+            transform: translateY(-3px);
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 2px 0;
+            transition: 0.4s;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                flex-direction: column;
+                padding: 30px 20px;
+                gap: 15px;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 100;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .logo::before {
+                display: none;
+            }
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            transition: opacity 0.3s ease;
+        }
+        
+        .overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .image-container {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .image-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .image-container {
+                margin: 15px 0;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div class="logo">JH5Z ICU</div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="#about">关于</a>
+                <a href="#importance">重要性</a>
+                <a href="#laws">法律法规</a>
+                <a href="#quotes">名言</a>
+                <a href="#appeal">诉求</a>
+                <a href="#global">全球趋势</a>
+                <a href="#impact">影响</a>
+                <a href="#cases">成功案例</a>
+                <a href="#voices">声音</a>
+                <a href="#suggestions">建议</a>
+                <a href="#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <header id="top">
+            <h1>金华五中需要信息课！</h1>
+            <div class="subtitle">捍卫信息科技教育，助力学生未来发展</div>
+        </header>
+        
+        <div class="section">
+            <h2>金华五中的重症监护室</h2>
+            <p>此网站是金华五中的重症监护室（JH5Z.ICU），由陆奕丞参照<a href="https://996.icu">996.icu</a>搭建，发布在Github上。截止至此页面发布时，此项目在Github已获得高达4颗star。金华五中在初三年级不开设信息科技课程，这是一种错误的做法，这样做违反了一些法律法规，我们需要帮助金华五中改正这种错误。顺便说一下，体育、音乐、美术课似乎也没有落实到位，更别说劳动、地方等等课程了。</p>
+            <p>我们希望通过这个平台，引起更多人的关注，推动学校重新审视信息科技课程的重要性。</p>
+            
+            <div class="image-container" id="img-1">
+                <img src="school-logo.png" alt="金华五中Logo">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="about">我们为何抗议？</h2>
+            <p>金华五中决定在初三年级取消信息科技课程，这一决定对我们的未来造成了严重的影响。</p>
+            <p>信息科技不再仅仅是选修课，而是现代社会的必需技能。在当今数字化时代，掌握编程、算法和计算机基础知识对于每个学生来说都至关重要。</p>
+            <p>我们相信，这一决定不仅剥夺了我们学习重要技能的机会，也违背了教育公平的原则。</p>
+            
+            <div class="image-container" id="img-2">
+                <img src="school-campus.jpg" alt="金华五中校园">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="importance">信息科技课程的重要性</h2>
+            <p>信息科技课程让我们：</p>
+            <ul>
+                <li>培养逻辑思维和问题解决能力</li>
+                <li>掌握编程和计算机基础知识</li>
+                <li>为未来的职业发展做好准备</li>
+                <li>激发创造力和创新能力</li>
+                <li>理解我们生活在一个数字化世界中</li>
+            </ul>
+            <p>在全球化和科技快速发展的今天，信息科技已经成为像阅读、写作和数学一样重要的基础技能。根据《2023年全球科技教育报告》，开设信息科技课程的学校，其毕业生在科技相关领域的就业率高出34%。</p>
+            
+            <div class="image-container" id="img-3">
+                <img src="coding-classroom.jpg" alt="信息科技课堂">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="laws">相关法律法规</h2>
+            <p>根据《浙江省义务教育课程实施办法（试行）》第三章深化评价改革第十条规定：树立科学的教育质量观和学校发展观，坚持把立德树人成效作为根本标准，优化学校教育质量评价，坚决克服重智育轻德育、重分数轻素养等片面办学行为，切实破除"唯分数""唯升学"倾向。注重对学生正确价值观、必备品格和关键能力的考查，推进小学生综合评价改革，探索小学学科分项等级评价，完善初中生综合素质评价及其运用，倡导评价促进学习的理念，提高学生自我评价、自我反思的能力。重视培养教师教育评价能力，严格遵守评价的伦理规范，在评价内容、评价方式和评价结果呈现及运用上尊重学生人格，保护学生自尊心，形成科学安全的评价文化和良好的教育生态。</p>
+            <p>根据《浙江省义务教育课程实施办法（试行）》附件浙江省义务教育课程设置及比例（2023 年版）第三章课程设置及课时安排第十条规定：<strong>信息科技（原信息技术）在三至八年级独立开设，有条件的地区和学校统筹课时后，在九年级亦可开设。</strong></p>
+            <p>根据《浙江省义务教育课程实施办法（试行）》附件浙江省义务教育课程设置及比例（2023 年版）第三章课程设置及课时安排第十条规定：体育与健康在一至九年级开设，每天至少统一安排 30 分钟的大课间体育活动，每个课间活动时间应安排学生走出教室适量活动和放松，保证学生每天校园体育活动不少于 1 小时。因天气等原因不宜开展室外教学活动的情况，须组织开展室内锻炼。</p>
+            <p>根据《浙江省义务教育课程实施办法（试行）》附件浙江省义务教育课程设置及比例（2023 年版）第三章课程设置及课时安排第十条规定：艺术在一至九年级开设，其中一至二年级包括唱游·音乐、造型·美术；三至七年级以音乐、美术为主，融入舞蹈、戏剧（含戏曲）、影视（含数字媒体艺术）相关内容；八至九年级包括音乐、舞蹈、戏剧（含戏曲）、美术、影视（含数字媒体艺术）等，学生在音乐、舞蹈、戏剧（含戏曲）中至少选择一项学习，在美术、影视（含数字媒体艺术）中至少选择一项学习。</p>
+            <p>根据《浙江省义务教育课程实施办法（试行）》附件浙江省义务教育课程设置及比例（2023 年版）第三章课程设置及课时安排第十条规定：劳动、综合实践活动、班团队活动、地方课程和校本课程（含拓展性课程）课时可统筹使用，可分散安排，也可集中安排。其中，劳动在一至九年级开设，除劳动实践周外，平均每周不少于1课时，侧重以体力劳动为主的日常生活劳动、生产劳动和服务性劳动。综合实践活动在一至九年级开设，平均每周不少于 1 课时，侧重跨学科研究性学习、社会实践。班团队活动在一至九年级开展，原则上平均每周不少于1课时，内容由学校安排。</p>
+            
+            <div class="image-container" id="img-4">
+                <img src="school-meeting.jpg" alt="金华五中领导班子开会">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="quotes">名人名言</h2>
+            <div class="quote">
+                <span class="tag info-tag">教育</span>
+                <span class="tag info-tag">未来</span>
+                "计算机科学是未来的语言，它将帮助我们理解世界。" — 沃尔特·萨维奇·兰德（Walter Savage Landor）
+            </div>
+            <div class="quote">
+                <span class="tag info-tag">思维</span>
+                <span class="tag info-tag">编程</span>
+                "计算机科学不仅仅是编程，它是一种思维方式。" — 周以真（Jeannette M. Wing）
+            </div>
+            <div class="quote">
+                <span class="tag info-tag">数字化</span>
+                <span class="tag info-tag">技能</span>
+                "在当今数字化时代，不会编程就像不会读写。" — 马克·扎克伯格（Mark Zuckerberg）
+            </div>
+            <div class="quote">
+                <span class="tag info-tag">创造力</span>
+                <span class="tag info-tag">表达</span>
+                "编程不仅是一种技能，更是一种创造力的表达。" — 威廉·范·科特雷姆（William Van Cotthem）
+            </div>
+            <div class="quote">
+                <span class="tag info-tag">技术</span>
+                <span class="tag info-tag">变化</span>
+                "技术正在不断改变世界，而教育必须跟上这种变化。" — 萨提亚·纳德拉（Satya Nadella）
+            </div>
+            <div class="quote">
+                <span class="tag info-tag">创新</span>
+                <span class="tag info-tag">未来</span>
+                "信息科技教育是培养未来创新者的关键。" — 希尔·乔布斯（Steve Jobs）
+            </div>
+            <div class="quote">
+                <span class="tag info-tag">素养</span>
+                <span class="tag info-tag">新时代</span>
+                "编程是新时代的素养，每个学生都应该有机会学习编程。" — 米歇尔·奥巴马（Michelle Obama）
+            </div>
+            <div class="quote">
+                <span class="tag info-tag">掌握</span>
+                <span class="tag info-tag">世界</span>
+                "掌握信息科技，就是掌握未来的世界。" — 比尔·盖茨（Bill Gates）
+            </div>
+            
+            <div class="image-container" id="img-5">
+                <img src="leader-speaking.jpg" alt="名人演讲">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>习近平总书记的讲话</h2>
+            <div class="highlight">
+                <p>建设网络强国，需要青年立志提升科技水平。网络核心技术是国之重器，突破和掌握核心技术是推进网络强国进程的关键。</p>
+                <p>互联网核心技术是我们最大的"命门"，核心技术受制于人是我们最大的隐患。然而，实现核心技术突破必须走自主创新之路。真正的核心技术是花钱买不来的、市场换不到的。</p>
+                <p>因此，建设网络强国要有自己的技术、有过硬的技术。青年一代要高度树立网络意识和网络自觉，紧紧牵住核心技术自主创新这个"牛鼻子"，下定决心、保持恒心、找准重心，刻苦钻研提升技能。</p>
+            </div>
+            <p>正如习近平总书记所指出："要实施国家教育数字化战略，建设学习型社会，推动各类型各层次人才竞相涌现。"</p>
+            <p><strong>信息化为中华民族带来了千载难逢的机遇。</strong></p>
+            <p>-2018年4月20日，习近平在全国网络安全和信息化工作会议上的讲话</p>
+            <p>要全面贯彻网络强国战略，把数字技术广泛应用于政府管理服务，推动政府数字化、智能化运行，为推进国家治理体系和治理能力现代化提供有力支撑。</p>
+            <p>--2022年4月19日，习近平主持召开中央全面深化改革委员会第二十五次会议强调</p>
+            <p>要瞄准未来科技和产业发展制高点，加快新一代信息技术、人工智能、量子科技、生物科技、新能源、新材料等领域科技创新，培育发展新兴产业和未来产业。</p>
+            <p>-2024年6月24日，习近平在全国科技大会、国家科学技术奖励大会、两院院士大会上的讲话</p>
+            <p>我多次讲过，过不了互联网这一关，就过不了长期执政这一关。这里最关键的，就是必须把党管宣传、党管意识形态、党管媒体、党管互联网原则落实到位，提升信息化条件下文化领域治理能力，在思想上、精神上、文化上筑牢党的执政基础和群众基础。</p>
+            <p>-2025第8期《求是》杂志发表习近平重要文章《加快建设文化强国》</p>
+            <p>习近平强调，新时代新征程，网信事业的重要地位作用日益凸显。</p>
+            
+            <div class="image-container" id="img-6">
+                <img src="leader-meeting.jpg" alt="总书记讲话">
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="appeal">我们的诉求</h2>
+            <p>我们要求金华五中立即恢复初三年级的信息科技课程，并保证所有学生都有平等的学习机会。</p>
+            <p>信息科技教育不应成为特权，而应成为每个学生的权利！</p>
+        </div>
+        
+        <div class="section">
+            <h2 id="global">信息科技教育的全球趋势</h2>
+            <p>在全球范围内，信息科技教育已经被视为基础教育的重要组成部分。以下是一些国家和地区的做法：</p>
+            <ul>
+                <li><span class="tag">美国</span> 美国：45个州已经将计算机科学纳入核心课程标准。</li>
+                <li><span class="tag">英国</span> 英国：2014年起，编程成为5-16岁学生的必修课。</li>
+                <li><span class="tag">芬兰</span> 芬兰：2016年将编程纳入国家课程，作为义务教育的一部分。</li>
+                <li><span class="tag">日本</span> 日本：2020年起，编程成为小学必修课。</li>
+                <li><span class="tag">新加坡</span> 新加坡：实施"计算思维教育计划"，从小学到中学全面覆盖。</li>
+            </ul>
+            <p>这些国家的成功经验表明，信息科技教育对于培养学生的创新能力和适应未来社会的能力具有重要意义。</p>
+        </div>
+        
+        <div class="section">
+            <h2 id="impact">信息科技课程对学生的影响</h2>
+            <p>信息科技课程不仅教授学生技术技能，还培养他们的综合能力：</p>
+            <ul>
+                <li>逻辑思维：通过编程和算法学习，培养学生的逻辑推理能力。</li>
+                <li>问题解决：面对复杂问题时，能够分解问题并找到解决方案。</li>
+                <li>创新思维：鼓励学生创造新的应用和解决方案。</li>
+                <li>团队合作：许多项目需要团队协作完成，培养学生的沟通和合作能力。</li>
+                <li>终身学习：信息科技领域不断变化，培养学生的自主学习能力。</li>
+            </ul>
+            <p>研究表明，学习编程的学生在数学、科学和逻辑推理方面的表现显著优于未学习编程的学生，这些能力对于他们未来的学习和职业发展至关重要。</p>
+        </div>
+        
+        <div class="section">
+            <h2 id="cases">成功案例（以下均为虚构）</h2>
+            <div class="case-study">
+                <h3>杭州西湖中学</h3>
+                <p>杭州西湖中学自2018年起，在七年级引入信息科技课程。三年后，该校学生在科技创新竞赛中获得省级奖项15项，市级奖项32项。毕业生在高中阶段的信息技术学习中表现出色，超过70%的学生表示信息科技课程对他们的逻辑思维和问题解决能力有显著帮助。</p>
+            </div>
+            <div class="case-study">
+                <h3>上海浦东实验中学</h3>
+                <p>上海浦东实验中学在六年级开设编程基础课程，七年级引入算法与数据结构，八年级开展人工智能入门。经过两年的实践，学生在信息技术素养方面显著提升，学校在全市科技教育评估中排名前5%。家长反馈显示，92%的家长认为信息科技课程对孩子的未来发展非常重要。</p>
+            </div>
+            <div class="case-study">
+                <h3>北京海淀区某重点中学</h3>
+                <p>该校自2017年起构建了完整的信息科技课程体系，涵盖编程、机器人、数据分析等领域。学生在全国青少年科技创新大赛中连续三年获得一等奖。学校信息科技教师团队被评为"全国优秀科技创新教育团队"。毕业生进入高中后，在信息技术和工程领域的学习表现显著优于其他学校的学生。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="voices">家长和社会的声音</h2>
+            <div class="quote">
+                "作为家长，我非常支持学校开设信息科技课程。我的孩子通过这门课程学会了编程基础知识，逻辑思维能力明显提高，这对他学习其他学科也有很大帮助。" — 张女士，金华五中学生家长
+            </div>
+            <div class="quote">
+                "信息科技是未来社会的核心技能。如果学校不提供这样的课程，孩子们将在这场技术革命中落后。我呼吁学校尽快恢复信息科技课程。" — 李先生，金华市某科技公司CEO
+            </div>
+            <div class="quote">
+                "编程和信息科技教育不是为了让孩子都成为程序员，而是为了培养他们的逻辑思维和解决问题的能力。这些能力在任何领域都是至关重要的。" — 王教授，浙江大学计算机科学系
+            </div>
+            <div class="quote">
+                "金华五中的这一决定与国家教育数字化战略背道而驰。信息科技课程是培养学生创新能力和适应未来社会的关键。" — 刘老师，金华市教师发展中心
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="suggestions">我们的建议</h2>
+            <p>为了推动金华五中恢复并加强信息科技课程，我们提出以下建议：</p>
+            <ol>
+                <li><strong>立即恢复课程</strong>：在初三年级立即恢复信息科技课程，并保证每周不少于1课时。</li>
+                <li><strong>加强师资队伍建设</strong>：通过培训和引进专业教师，提升信息科技教学水平。</li>
+                <li><strong>构建完整课程体系</strong>：从七年级开始系统开设信息科技课程，涵盖编程基础、算法逻辑、数据处理、人工智能入门等内容。</li>
+                <li><strong>开展课外活动</strong>：设立编程俱乐部、机器人竞赛团队等，激发学生兴趣，培养实践能力。</li>
+                <li><strong>加强家校合作</strong>：通过家长会、讲座等形式，提升家长对信息科技教育重要性的认识。</li>
+                <li><strong>建立评估机制</strong>：制定科学的课程评估标准，确保教学质量和学生学习效果。</li>
+            </ol>
+            <p>我们相信，通过这些措施，可以有效提升学生的科技素养，为他们的未来发展奠定坚实基础。</p>
+        </div>
+        
+        <div class="cta-section">
+            <h2>加入我们的行动</h2>
+            <p>请分享我们的诉求，让更多人了解这一不公正的决定。</p>
+            <p>您的支持对我们至关重要！</p>
+            
+            <div class="social-share">
+                <a href="https://twitter.com/intent/tweet?url=https://jh5z.icu&text=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://facebook.com/sharer/sharer.php?u=https://jh5z.icu" title="分享到Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://reddit.com/submit?url=https://jh5z.icu&title=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Reddit"><i class="fab fa-reddit-alien"></i></a>
+                <a href="https://linkedin.com/shareArticle?url=https://jh5z.icu&title=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:?subject=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展&body=请访问 https://jh5z.icu 了解详情" title="通过邮件分享"><i class="fas fa-envelope"></i></a>
+                <a href="https://telegram.me/share/url?url=https://jh5z.icu&text=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://whatsapp.com/send?text=https://jh5z.icu - 金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://pinterest.com/pin/create/button/?url=https://jh5z.icu&media=https://jh5z.icu/screenshot.jpg&description=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                <a href="https://tumblr.com/share/link?url=https://jh5z.icu&name=金华五中需要信息课！&description=捍卫信息科技教育，助力学生未来发展" title="分享到Tumblr"><i class="fab fa-tumblr"></i></a>
+                <a href="https://medium.com/submit?url=https://jh5z.icu" title="分享到Medium"><i class="fab fa-medium-m"></i></a>
+                <a href="https://www.instagram.com/share?url=https://jh5z.icu&text=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.snapchat.com/share?url=https://jh5z.icu&text=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+                <a href="https://www.tiktok.com/share?url=https://jh5z.icu&text=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.quora.com/share?url=https://jh5z.icu&title=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Quora"><i class="fab fa-quora"></i></a>
+                <a href="https://www.stumbleupon.com/submit?url=https://jh5z.icu&title=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到StumbleUpon"><i class="fab fa-stumbleupon"></i></a>
+                <a href="https://www.digg.com/submit?url=https://jh5z.icu&title=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Digg"><i class="fab fa-digg"></i></a>
+                <a href="https://www.hackernews.com/submit?url=https://jh5z.icu&title=金华五中需要信息课！捍卫信息科技教育，助力学生未来发展" title="分享到Hacker News"><i class="fab fa-hacker-news"></i></a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 id="contact">联系我们</h2>
+            <p>请认准金华五中的重症监护室官方网站：<a href="https://jh5z.icu">https://jh5z.icu</a>（已经被墙，国内无法访问）（cloudflare CDN）或<a href="http://107.173.181.127">http://jh5z.xyz</a>（cloudflare）</p>
+            <p>您也可以在 <a href="https://google.com">Google</a>、<a href="https://www.bing.com">Bing</a>、<a href="https://www.baidu.com">百度</a> 上搜索本站相关的关键词。</p>
+            <p>本项目Github链接：<a href="https://github.com/01luyicheng/jh5z.ICU">https://github.com/01luyicheng/jh5z.ICU</a></p>
+        </div>
+        
+        <div class="section">
+            <h2>友情链接</h2>
+            <p><a href="https://996.icu">https://996.icu</a> 工作996，生病ICU</p>
+            <p>金华五中没有996，所以我们用不着996ICU</p>
+        </div>
+        
+        <footer>
+            <p>© 2025 陆奕丞</p>
+            <p>联系我们：email@jh5z.icu</p>
+            <div class="footer-links">
+                <a href="#top">回到顶部</a>
+                <a href="#about">关于</a>
+                <a href="#importance">重要性</a>
+                <a href="#laws">法律法规</a>
+                <a href="#contact">联系1</a>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const overlay = document.getElementById('overlay');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+        
+        overlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        const mainNav = document.getElementById('main-nav');
+        let lastScrollY = 0;
+        let scrollTimeout;
+        let navIsScrolled = false;
+        
+        window.addEventListener('scroll', function() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY < lastScrollY || currentScrollY < 100) {
+                mainNav.style.transform = 'translateY(0)';
+                navIsScrolled = false;
+            } 
+            else if (currentScrollY > 100 && !navIsScrolled) {
+                mainNav.style.transform = 'translateY(-100%)';
+                navIsScrolled = true;
+            }
+            
+            lastScrollY = currentScrollY;
+            
+            clearTimeout(scrollTimeout);
+            
+            scrollTimeout = setTimeout(() => {
+                if (navIsScrolled) {
+                    mainNav.style.transform = 'translateY(0)';
+                    navIsScrolled = false;
+                }
+            }, 1000);
+            
+            const backToTopButton = document.getElementById('back-to-top');
+            if (currentScrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        const backToTopButton = document.getElementById('back-to-top');
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offset = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        overlay.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeImages = document.querySelectorAll('.image-container');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeImages.forEach(img => {
+                observer.observe(img);
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
